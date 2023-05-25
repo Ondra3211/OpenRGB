@@ -75,6 +75,19 @@ OpenRGBDevicePage::OpenRGBDevicePage(RGBController *dev, QWidget *parent) :
     std::string         ui_string           = "UserInterface";
     json                ui_settings;
 
+    json                ui_settings_proto;
+
+    ui_settings_proto["numerical_labels"]["name"] = "Numerical Labels";
+    ui_settings_proto["numerical_labels"]["type"] = "boolean";
+
+    ui_settings_proto["disable_key_expansion"]["name"] = "Disable Key Expansion";
+    ui_settings_proto["disable_key_expansion"]["type"] = "boolean";
+
+    ui_settings_proto["greyscale_tray_icon"]["name"] = "Greyscale Tray Icon";
+    ui_settings_proto["greyscale_tray_icon"]["type"] = "boolean";
+
+    settings_manager->RegisterSettingsPrototype(ui_string, ui_settings_proto);
+
     ui_settings = settings_manager->GetSettings(ui_string);
 
     if(ui_settings.contains("numerical_labels"))
