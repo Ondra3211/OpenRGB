@@ -42,7 +42,8 @@ enum
     GRAM_XS_MODE_SPIRAL         = 0x08,
 };
 
-enum {
+enum
+{
     GRAM_XS_BRIGHTNESS          = 0x04,
     GRAM_XS_BRIGHTNESS_MIN      = 0x00,
     GRAM_XS_BRIGHTNESS_MAX      = 0x04,
