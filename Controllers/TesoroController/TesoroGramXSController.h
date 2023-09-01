@@ -25,7 +25,7 @@ enum
     GRAM_XS_PACKET_HEADER_SIZE  = 8,
     GRAM_XS_KEY_COUNT           = 104,
     GRAM_XS_RANDOM_COLOR        = 0x02,
-    GRAM_XS_DEFAULT_PROFILE     = 0x04,
+    GRAM_XS_DEFAULT_PROFILE     = 0x04
 };
 
 enum
@@ -39,14 +39,14 @@ enum
     GRAM_XS_MODE_CYCLING        = 0x05,
     GRAM_XS_MODE_RIPPLE         = 0x06,
     GRAM_XS_MODE_WAVE           = 0x07,
-    GRAM_XS_MODE_SPIRAL         = 0x08,
+    GRAM_XS_MODE_SPIRAL         = 0x08
 };
 
 enum
 {
     GRAM_XS_BRIGHTNESS          = 0x04,
     GRAM_XS_BRIGHTNESS_MIN      = 0x00,
-    GRAM_XS_BRIGHTNESS_MAX      = 0x04,
+    GRAM_XS_BRIGHTNESS_MAX      = 0x04
 };
 
 class TesoroGramXSController

@@ -127,7 +127,7 @@ static const char *led_names[] =
         KEY_EN_DOWN_ARROW,
         KEY_EN_RIGHT_ARROW,
         KEY_EN_NUMPAD_0,
-        KEY_EN_NUMPAD_PERIOD,
+        KEY_EN_NUMPAD_PERIOD
 };
 
 RGBController_TesoroGramXS::RGBController_TesoroGramXS(TesoroGramXSController *controller_ptr)
