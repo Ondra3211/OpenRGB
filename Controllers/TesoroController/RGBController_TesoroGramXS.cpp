@@ -130,6 +130,17 @@ static const char *led_names[] =
         KEY_EN_NUMPAD_PERIOD
 };
 
+/**------------------------------------------------------------------*\
+    @name Tesoro Gram XS
+    @category Keyboard
+    @type USB
+    @save :robot:
+    @direct :white_check_mark:
+    @effects :white_check_mark:
+    @detectors DetectTesoroGramXS
+    @comment
+\*-------------------------------------------------------------------*/
+
 RGBController_TesoroGramXS::RGBController_TesoroGramXS(TesoroGramXSController *controller_ptr)
 {
     controller  = controller_ptr;
