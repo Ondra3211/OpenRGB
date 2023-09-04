@@ -16,13 +16,6 @@
 
 enum
 {
-    GRAM_XS_PACKET_SIZE         = 264,
-    GRAM_XS_PACKET_R            = 8,
-    GRAM_XS_PACKET_G_1          = 152,
-    GRAM_XS_PACKET_G_2          = 8,
-    GRAM_XS_PACKET_B            = 40,
-    GRAM_XS_PACKET_COLOR_SIZE   = 144,
-    GRAM_XS_PACKET_HEADER_SIZE  = 8,
     GRAM_XS_KEY_COUNT           = 104,
     GRAM_XS_RANDOM_COLOR        = 0x02,
     GRAM_XS_DEFAULT_PROFILE     = 0x04
@@ -30,7 +23,18 @@ enum
 
 enum
 {
-    GRAM_XS_MODE_DIRECT         = 0xFF,
+    GRAM_XS_PACKET_SIZE         = 264,
+    GRAM_XS_PACKET_R            = 8,
+    GRAM_XS_PACKET_G_1          = 152,
+    GRAM_XS_PACKET_G_2          = 8,
+    GRAM_XS_PACKET_B            = 40,
+    GRAM_XS_PACKET_COLOR_SIZE   = 144,
+    GRAM_XS_PACKET_HEADER_SIZE  = 8
+};
+
+enum
+{
+    GRAM_XS_MODE_DIRECT         = 0xFF, /* Dummy value, this mode does not exist */
     GRAM_XS_MODE_STATIC         = 0x00,
     GRAM_XS_MODE_TRIGGER        = 0x01,
     GRAM_XS_MODE_FIREWORK       = 0x02,
@@ -55,13 +59,24 @@ public:
     TesoroGramXSController(hid_device *dev_handle, const char *path);
     ~TesoroGramXSController();
 
-    std::string GetLocation();
-    std::string GetSerialString();
+    std::string     GetLocation();
+    std::string     GetSerialString();
 
-    void SetMode(unsigned char mode, unsigned char color_mode, std::vector<RGBColor> colors, unsigned char brightness);
-    void UpdateLeds(std::vector<RGBColor> colors, bool save_to_flash = false);
+    void    SetMode
+            (
+            unsigned char mode,
+            unsigned char brightness,
+            unsigned char color_mode,
+            std::vector<RGBColor> colors
+            );
+    
+    void    UpdateLeds
+            (
+            std::vector<RGBColor> colors,
+            bool save_to_flash = false
+            );
 
 private:
     std::string location;
-    hid_device *dev;
+    hid_device  *dev;
 };

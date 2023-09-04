@@ -345,9 +345,9 @@ void RGBController_TesoroGramXS::DeviceUpdateMode()
         controller->SetMode
                 (
                 modes[active_mode].value,
+                modes[active_mode].brightness,
                 modes[active_mode].color_mode,
-                modes[active_mode].colors,
-                modes[active_mode].brightness
+                modes[active_mode].colors
                 );
     }
 }

@@ -64,7 +64,7 @@ std::string TesoroGramXSController::GetSerialString()
     return(return_string);
 }
 
-void TesoroGramXSController::SetMode(unsigned char mode, unsigned char color_mode, std::vector<RGBColor> colors, unsigned char brightness)
+void TesoroGramXSController::SetMode(unsigned char mode, unsigned char brightness, unsigned char color_mode, std::vector<RGBColor> colors)
 {
     unsigned char usb_buf[GRAM_XS_PACKET_SIZE];
 
@@ -165,3 +165,4 @@ void TesoroGramXSController::UpdateLeds(std::vector<RGBColor> colors, bool save_
     hid_send_feature_report(dev, usb_buf_GB, sizeof(usb_buf_GB));
     std::this_thread::sleep_for(10ms);
 }
+ 
