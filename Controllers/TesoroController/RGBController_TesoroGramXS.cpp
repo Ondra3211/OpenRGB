@@ -14,13 +14,13 @@
 //0xFFFFFFFF indicates an unused entry in matrix
 #define NA  0xFFFFFFFF
 
-static unsigned int matrix_map[6][22] =
-    { {  0,   NA,  1,    2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  NA,  13,  14,  15,  NA,  NA,  NA,  NA },
-      {  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,  29,  NA,  30,  31,  32,  33,  34,  35,  36 },
-      {  37,  NA,  38,  39,  40,  41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,  57 },
-      {  58,  NA,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  NA,  70,  NA,  NA,  NA,  71,  72,  73,  NA },
-      {  74,  NA,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,  NA,  85,  NA,  NA,  86,  NA,  87,  88,  89,  90 },
-      {  91,  92,  93,  NA,  NA,  NA,  NA,  94,  NA,  NA,  NA,  95,  96,  97,  98,  99, 100, 101, 102,  NA, 103,  NA } };
+static unsigned int matrix_map[6][21] =
+    { {  0,   NA,  1,    2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  NA,  NA,  NA,  NA, },
+      {  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36, },
+      {  37,  38,  39,  40,  41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,  57, },
+      {  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  NA,  70,  NA,  NA,  NA,  71,  72,  73,  NA, },
+      {  74,  NA,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,  NA,  85,  NA,  86,  NA,  87,  88,  89,  90, },
+      {  91,  92,  93,  NA,  NA,  NA,  94,  NA,  NA,  NA,  95,  96,  97,  98,  99, 100, 101,  NA, 102,  103, NA  } };
 
 static const char *led_names[] =
     {
@@ -294,7 +294,7 @@ void RGBController_TesoroGramXS::SetupZones()
 
     XS_zone.matrix_map          = new matrix_map_type;
     XS_zone.matrix_map->height  = 6;
-    XS_zone.matrix_map->width   = 22;
+    XS_zone.matrix_map->width   = 21;
     XS_zone.matrix_map->map     = (unsigned int *)&matrix_map;
     zones.push_back(XS_zone);
 
