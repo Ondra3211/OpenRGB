@@ -82,7 +82,7 @@ void TesoroGramXSController::SetMode(unsigned char mode, unsigned char brightnes
         /*------------------------------------------------------------------------*\                             
         | Random color mode for each of 5 modes can be set at once for all modes   |
         | because only one mode is active. This is what also the Teosoro app does  |
-        \*_-----------------------------------------------------------------------*/
+        \*------------------------------------------------------------------------*/
         usb_buf[19] = 0x02;
         usb_buf[20] = 0x02;
         usb_buf[21] = 0x02;
@@ -95,7 +95,7 @@ void TesoroGramXSController::SetMode(unsigned char mode, unsigned char brightnes
         /*-------------------------------------------------------------------------*\
         | Send color data to all 5 modes. Can be set individually but only one      |
         | mode is active so it's unnecessary. This is also what the Tesoro app does |
-        \*_------------------------------------------------------------------------*/
+        \*-------------------------------------------------------------------------*/
         for(unsigned int count = 0; count < 5; count++)
         {
             usb_buf[count * 6 + 33] = RGBGetRValue(colors[0]);
